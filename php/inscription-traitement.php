@@ -12,7 +12,6 @@ $reponse = htmlspecialchars($_POST['reponse']);
         
 //on sécurise le mdp
 $passwordhash = password_hash ($_POST['password'], PASSWORD_DEFAULT);
-$_SESSION['passwordhash']=$passwordhash;
 
   //insérer données du formulaire dans BDD
   $sql = "INSERT INTO `Account` ( `nom`, `prenom`, `username`, `password`, `reponse`)
