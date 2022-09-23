@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "Extranet_GBAF";
+$dbname = "extranet-gbaf";
 
 try {
     //connexion à la BDD

@@ -14,7 +14,7 @@ $reponse = htmlspecialchars($_POST['reponse']);
 $passwordhash = password_hash ($_POST['password'], PASSWORD_DEFAULT);
 
   //insérer données du formulaire dans BDD
-  $sql = "INSERT INTO `Account` ( `nom`, `prenom`, `username`, `password`, `reponse`)
+  $sql = "INSERT INTO `account` ( `nom`, `prenom`, `username`, `password`, `reponse`)
 VALUES( '$_POST[nom]','$_POST[prenom]','$_POST[username]','$passwordhash','$_POST[reponse]')
 ";
   $conn->exec($sql);
