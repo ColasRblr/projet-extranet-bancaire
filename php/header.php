@@ -9,8 +9,10 @@
   
 </head>
 <body>
-  ...
-  <!-- Le reste du contenu -->
-  ...
+
+<div class="user-widget">
+    <a href="deconnexion.php">Se déconnecter</a>
+
+</div>
 </body>
 </html>

@@ -19,6 +19,11 @@
        
        <br/>
       <button id="login-btn" type="submit" name="connexion">Connexion</button>
-              
+</form>
+
+<div> 
+<button onclick="window.location.href = 'reset-password.php'"> J'ai oublié mon mot de passe</button>
+ </div>
+ 
 </body>
 </html>

@@ -24,6 +24,7 @@
                 if(password_verify($password, $data['password']))
                 {
                    // On crée la session et on redirige sur user-connected.php
+                   session_start ();
                    $_SESSION ['username'];
                    header('Location: user-connected.php');
                    die();
