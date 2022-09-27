@@ -1,4 +1,5 @@
-<?php session_start (); ?>
+<?php
+ //session_start ();?> 
 <!doctype html>
 <html lang="fr">
 <head>
@@ -9,7 +10,7 @@
   
 </head>
 <body>
-  <?php include 'header.php'; ?>
+  <?php include 'extensions/header.php'; ?>
 
 <p>Bienvenue sur votre session</p>
 

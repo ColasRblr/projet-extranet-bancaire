@@ -9,7 +9,8 @@
 </head>
 <body>
   ...
-  <!-- Le reste du contenu -->
+ <p>Bienvenue dans votre page de paramètres personnels </p>
+ 
   ...
 </body>
 </html>

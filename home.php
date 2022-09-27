@@ -8,7 +8,7 @@
 </head>
 
 <body>    
-  
+<?php include 'extensions/header.php'; ?>
 <h1>Bienvenue sur l'extranet de GBAF</h1>
 
   <div id="inscription">
