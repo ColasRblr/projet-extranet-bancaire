@@ -27,7 +27,7 @@
                 $passwordhash = password_hash ($_POST['password'], PASSWORD_DEFAULT);
                 
             //insérer données du formulaire dans BDD
-            $update = "UPDATE Account SET password='$passwordhash'";
+            $update = "UPDATE Account SET password='$passwordhash'WHERE username=?";
             $conn -> exec($update);
 
                  echo "Votre mot de passe est modifié ! <br> Vous pouvez vous rendre sur la <a href='home.php'> page d'accueil </a> pour vous connecter";
