@@ -1,5 +1,5 @@
 <?php
- //session_start ();?> 
+ session_start ();?> 
 <!doctype html>
 <html lang="fr">
 <head>
@@ -17,7 +17,7 @@
 <div> 
 <h1>Qu'est-ce que le GBAF ? </h1> 
 
-<img src="../visuels/GBAF.png" width=300px>
+<img src="img/GBAF.png" width=300px>
 
 Le Groupement Banque Assurance Français​ (GBAF) est une fédération représentant les 6 grands groupes français :
 ● BNP Paribas ;
@@ -35,6 +35,6 @@ Pour remédier à cela, le GBAF souhaite proposer aux salariés des grands group
 Chaque salarié pourra ainsi poster un commentaire et donner son avis.
 Le but du projet est donc de développer un extranet donnant accès à ces informations.
 </div>
- 
+<?php include 'extensions/footer.php'; ?>
 </body>
 </html>

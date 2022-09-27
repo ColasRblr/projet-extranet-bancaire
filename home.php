@@ -23,6 +23,6 @@
 </div>
 
 
-  
+<?php include 'extensions/footer.php'; ?>
 </body>
 </html>

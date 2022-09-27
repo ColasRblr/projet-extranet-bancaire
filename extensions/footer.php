@@ -9,7 +9,7 @@
 </head>
 <body>
   ...
-  <!-- Le reste du contenu -->
+ <p>contenu du footer </p>
   ...
 </body>
 </html>
