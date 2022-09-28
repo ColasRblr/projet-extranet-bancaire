@@ -27,11 +27,11 @@
                 $passwordhash = password_hash ($_POST['password'], PASSWORD_DEFAULT);
                 
             //insérer données du formulaire dans BDD
-            $update = "UPDATE Account SET password='$passwordhash'WHERE username=?";
+            $update = "UPDATE Account SET password='$passwordhash'WHERE username='$username'";
             $conn -> exec($update);
 
                  echo "Votre mot de passe est modifié ! <br> Vous pouvez vous rendre sur la <a href='home.php'> page d'accueil </a> pour vous connecter";
-              }else{ echo "Vous n'avez pas répondu correctement à la question secrète"; }}
-             else {echo "Utilisateur non reconnu";}
+              }else{ echo "Vous n'avez pas répondu correctement à la question secrète<br><a href='reset-password.php'> Essayez à nouveau </a>"; }}
+             else {echo "Utilisateur non reconnu <br><a href='reset-password.php'> Essayez à nouveau </a>";}
 ?>
  
