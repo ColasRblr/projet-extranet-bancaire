@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "extranet-gbaf";
+$dbname = "extranet_gbaf";
 
 try {
     //connexion à la BDD
@@ -16,5 +16,4 @@ catch(PDOException $e)
 {
 	die('Erreur : '.$e->getMessage());
 }
-
 ?>

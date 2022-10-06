@@ -66,12 +66,13 @@ foreach($acteurs as $acteur):
 <article> 
   <h2><?php echo $acteur['acteur']?></h2>
   <?php echo '<img src="data:image/jpeg;base64,'. base64_encode( $acteur['logo'] ) .'" width=300px/>';?>
-  <div><?php echo substr($acteur['description'],0 , 104);?><p>...</p></div>
+  <div><?php echo substr($acteur['description'],0 , 120), '...';?></div>
 
-<form action="partners-details.php" method="POST">
+  <form action="partners-details.php" method="POST">
 <input type="hidden" value='<h2><?php echo $acteur['acteur']?></h2>
   <?php echo '<img src="data:image/jpeg;base64,'. base64_encode( $acteur['logo'] ) .'" width=300px/>';?>
   <div><?php echo $acteur['description'];?></div>' name="partner_infos"> 
+  <input type="hidden" value='<?php echo $acteur['id_acteur']?>' name="id_acteur">
 <input type="submit" value="Afficher la suite">
 </form>
 
