@@ -16,8 +16,9 @@
       $check->execute(array($username));
       $data = $check->fetch();
       $row = $check->rowCount();
+    
       
-     // Si > à 0 alors l'utilisateur existe
+     // Si > à 0 alors l'utilisateur est présent dans la table account
          if($row > 0) 
       {
               // Si la réponse est la bonne
