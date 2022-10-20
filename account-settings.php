@@ -5,34 +5,53 @@
   <meta charset="utf-8">
 
   <title>Paramètres du compte</title>
-  <link href="style.css" rel="stylesheet">
+  <link href="css/formulaire.css" rel="stylesheet">
+
+<?php 
+include 'config.php';
+//on crée la variable $id_user
+
+$id_user = $_SESSION['id_user'];
+
+//on va chercher les informations du user connecté
+
+$check = $conn->prepare('SELECT * FROM Account WHERE id_user=?');
+$check->execute(array($id_user));
+$data = $check->fetch();
+?>
   
 </head>
+
+
 <body>
-  ...
- <p>Bienvenue dans votre page de paramètres personnels </p>
 
-<p>>Vous pouvez modifier ci-dessous vos informations personnelles</p>
+<div class="formulaire">
 
- <form method="post" action="account-settings-traitement.php">
+ <form class="form" method="post" action="account-settings-traitement.php">
 
-       <label for="username_new">Nom d'utilisateur :</label>
-       <input type="text" name="username_new" id="username_new"/>
+       <label for="username_new">Identifiant</label>
+       <input type="text" name="username_new" value="<?php echo $data['username']?>" id="username_new"/>
        
-       <br/>
-       <label for="nom_new">Nom:</label>
-       <input type="text" name="nom_new" id="nom_new"/>
+       <label for="nom_new">Nom</label>
+       <input type="text"  name="nom_new" value="<?php echo $data['nom']?>" id="nom_new"/>
 
-       <br/>
-       <label for="prenom_new">Prenom:</label>
-       <input type="text" name="prenom_new" id="prenom_new"/>
+       <label for="prenom_new">Prénom</label>
+       <input type="text" name="prenom_new" value="<?php echo $data['prenom']?>"id="prenom_new"/>
 
-       <br/>
-       <label for="password_new">Mot de passe :</label>
+       <label for="password_new">Mot de passe </label>
        <input type="password" name="password_new" id="password_new"/>
 
-       <br/>
       <button id="login-btn" type="submit" name="username-modif">Enregistrer mes modifications</button>
+
+    <div class="bouton-retour">
+    
 </form>
+  
+     
+     
+</div>
+ <button id="retour" onclick="window.location.href='user-connected.php'"> Retour </button> </div>
+
 </body>
+
 </html>

@@ -1,0 +1,69 @@
+/* Eléments communs sur les 3 pages Home, User-connected et Partner-details*/
+
+.page {  
+    display: flex;
+    flex-direction: column;
+    padding-bottom:15vh; 
+    min-height:70vh;
+    position: relative;
+    width:100%;
+    font-family: 'scramblemixed-regular', sans-serif;
+    background:#eae4e4 ;
+    
+  }
+  
+  button{
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background-color: rgba(252, 4, 4, 0.5) ;
+    color:white;
+    font-size: 1em;
+    font-weight: 400;
+    transition: all 0.3s;
+  }
+  button:hover {
+    cursor: pointer;
+  border:1px solid rgba(252, 4, 4, 0.5);
+  background-color: transparent;
+  color:rgba(252, 4, 4, 0.5);
+    }
+    p{
+      text-align: justify;
+    }
+  
+    /*Page home*/
+  
+    #home{
+      display: flex;
+      flex-direction: row;
+    }
+
+  h1 {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:20px 20px 20px 20px;
+
+  } 
+    #inscription{
+  display: flex;
+  flex-direction: column;
+  width:50%;
+    padding: 0 20px 0 20px ;
+    }
+  
+    #connexion{
+  display: flex;
+  flex-direction: column;
+  width:50%;
+  padding: 0 20px 0 20px ;
+    }
+
+    .divider {
+      margin: 20px;
+      height:px;
+      color: black;
+      position:absolute;
+    }

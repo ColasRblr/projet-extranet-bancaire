@@ -1,0 +1,163 @@
+.page {  
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  font-family: 'scramblemixed-regular', sans-serif;
+  background:#eae4e4 ;}
+
+img{
+  width:50%;
+}
+
+button{
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid transparent;
+  background-color: rgba(252, 4, 4, 0.5) ;
+  color:white;
+  font-size: 1em;
+  font-weight: 400;
+  transition: all 0.3s;
+}
+button:hover {
+  cursor: pointer;
+border:1px solid rgba(252, 4, 4, 0.5);
+background-color: transparent;
+color:rgba(252, 4, 4, 0.5);
+  }
+  p{
+    text-align: justify;
+  }
+
+
+ .frise {
+  display:flex;
+  justify-content: center;
+ }
+
+ #illustration {
+  width:100px;
+ }
+
+.divider {
+  margin: 20px;
+  height:px;
+  background-color: black;
+}
+
+ #liste {
+  border:solid 2px;
+  border-color:black;
+  width:100;
+
+ }
+
+ article {
+  display:flex;
+  border:solid 2px;
+  border-color:black;
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-direction: row;
+  justify-items: space-around;
+  padding-right: 10px;
+ }
+
+  #logo{
+    display:flex;
+    justify-content: flex-start;
+    margin-left:20px;
+    align-items: center;
+    width:30%;
+  }
+
+
+
+  #article {
+    display: flex;
+    flex-direction: column;
+    width:40%;
+  }
+
+#bouton {
+  display:flex;
+    justify-content: flex-end;
+    align-items:flex-end;
+    width:30%;
+}
+
+
+/*Animation loader avant page user-connected*
+.loader{
+position:absolute;
+height: 100%;
+width: 100%;
+font-family: 'scramblemixed-regular', sans-serif;
+background: linear-gradient(to top left, #eae4e4 10%, #808080 100%);
+animation: hideLoader 5s forwards;
+}
+
+form {
+ display:flex;
+flex-direction: column;
+justify-content: center;
+height: 100%;
+width: 100%;
+display: flex;
+flex-direction: column; 
+}
+
+#username, #password {
+padding: 15px;
+margin: 5px 0;
+display:flex;
+justify-content:center;
+outline: none;
+border: none;
+background-color: rgba(252, 4, 4, 0.2) ;
+}
+
+@keyframes hideLoader
+{
+
+  0%{
+    opacity:1;
+  }
+  50%{
+    opacity:1;
+  }
+  100%
+  {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.page {
+z-index: -1;
+  height: 100%;
+  width: 100%;
+ animation: pageappear 5s forwards ;
+
+}
+
+@keyframes pageappear
+{
+  0%{
+    opacity:0;
+    display:none;
+  }
+  50%{
+    opacity:0;
+    display:none;
+  }
+  100%
+  {
+    opacity: 1;
+  }
+} */
+
+
+ 

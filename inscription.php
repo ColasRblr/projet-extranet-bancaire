@@ -3,32 +3,42 @@
   <meta charset="utf-8">
 
   <title>Création compte utilisateur</title>
-  <link href="style.css" rel="stylesheet">
+  <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css"/>
+  <link href="css/formulaire.css" rel="stylesheet">
   
 </head>
+
 <body>
 
-<form method="post" action='inscription-traitement.php'>
-     <div>
-       <label for="nom">Nom :</label>
-       <input type="text" name="nom" id="nom" required="required"/>
-     </div>
-     <div>
-       <label for="prénom">Prénom :</label>
-       <input type="text" name="prenom" id="prenom" required="required" />     
-      <div>     
-       <label for="username">Identifiant :</label>
-       <input type="text" name="username" id="username" required="required" />    
-      </div>
-      <div>
-       <label for="password">Mot de passe :</label>
-       <input type="password" name="password" id="password" required="required"/>
-      </div>
-      <div>
-       <label for="reponse"> Quel est le nom de famille de votre professeur d'enfance préféré ? :</label>
-       <input type="text" name="reponse" id="reponse" required="required"/>
-      </div>
+<div class="formulaire">
+
+  <div class="img">
+<img id="logo"src="img/GBAF-removed.png" >
+</div>
+
+<form class="form" method="post" action='inscription-traitement.php'>
+
+       <input type="text"  class="text"  placeholder="Nom" name="nom" id="nom" required="required"/>
+      
+       <input type="text" class="text"  placeholder="Prénom" name="prenom" id="prenom" required="required" />     
+       
+       <input type="text" class="text"  placeholder="Identifiant" name="username" id="username" required="required" />    
+    
+       <input type="password" placeholder="Mot de passe"  name="password" id="password" required="required"/>
+     
+       <label for="reponse"> Question secrète : quel est le prénom de votre grand-mère maternelle ?</label>
+       <input type="text"  class="text" placeholder="Réponse" name="reponse" id="reponse" required="required"/>
+
        <button type="submit" >S'inscrire</button>
+    
+       <button id="retour" onclick="window.location.href='home.php'"> Retour </button>
+      
 </form>  
+
+</div>
+
 </body>
+
+
+
 </html>
