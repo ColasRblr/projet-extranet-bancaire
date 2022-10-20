@@ -4,25 +4,38 @@
   <meta charset="utf-8">
 
   <title>Page d'accueil</title>
-  <link href="style.css" rel="stylesheet">
+  <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css"/>
+  <link href="css/home.css" rel="stylesheet">
 </head>
+ 
+<body>
 
-<body>    
-<?php include 'extensions/header.php'; ?>
-<h1>Bienvenue sur l'extranet de GBAF</h1>
+<header>
+ <?php include 'extensions/header.php'; ?>
+</header>
 
-  <div id="inscription">
-   <p>Si vous ne possédez pas encore de compte, veuillez cliquer ci-dessous afin de vous enregistrer pour avoir accès au service proposé par l'extranet</p>
-   <a href="inscription.php"> S'inscrire </a> 
-  </div> 
+<div class="page">
 
-  <div id="connexion"> 
+ <h1>Bienvenue sur l'extranet de GBAF</h1>
+
+<section id="home">
+
+   <div id="inscription">
+    <p>Si vous ne possédez pas encore de compte, veuillez cliquer ci-dessous afin de vous enregistrer pour avoir accès au service proposé par l'extranet</p>
+    <a href="inscription.php"> S'inscrire </a> 
+   </div> 
+
+   <div id="connexion"> 
     <p>Si vous possédez déjà un compte, connectez-vous ci-dessous afin d'accéder à votre page d'accueil utilisateur</p>
-  <?php include 'login.php'; ?>
-
+    <a href="login.php"> Se connecter </a> 
+   <button id="reset"onclick="window.location.href = 'reset-password.php'"> J'ai oublié mon mot de passe</button>
 </div>
-
-
-<?php include 'extensions/footer.php'; ?>
+<div class="divider"> </div>
+</section>
+</div>
 </body>
+
+ <?php include 'extensions/footer.php'; ?>
+
 </html>
+ 

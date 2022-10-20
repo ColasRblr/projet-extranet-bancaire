@@ -4,12 +4,14 @@
   <meta charset="utf-8">
 
   <title>footer</title>
-  <link href="style.css" rel="stylesheet">
+  <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css"/>
+
+  <link href="css/extensions.css" rel="stylesheet">
   
 </head>
 <body>
-  ...
- <p>contenu du footer </p>
-  ...
+<div class="footer">
+ <p id="text"> | Mentions légales | Contact | </p>
+</div>
 </body>
 </html>

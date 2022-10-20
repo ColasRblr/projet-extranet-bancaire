@@ -1,0 +1,95 @@
+/* Eléments communs sur les 3 pages Home, User-connected et Partner-details*/
+.page {  
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-family: 'scramblemixed-regular', sans-serif;
+    background:#eae4e4 ;
+  }
+  
+  img{
+    width:50%;
+  }
+  
+    p{
+      text-align: justify;
+    }
+
+
+#logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height:50%;
+    margin-top: 20px;
+}
+  
+.partner{
+    display:flex;
+    flex-direction: column;
+    border:solid 2px;
+    border-color: black;
+    margin:0 0 20px 0;
+    padding: 20px 20px 20px 20px;
+}
+.commentaire {
+    display:flex;
+    flex-direction: column;
+    border:solid 2px;
+    border-color: black;
+    margin:0 0 20px 0;
+  }
+
+ #com-vote {
+    display:flex;
+    flex-direction: row;
+  }
+
+ #titre-com {
+  display:flex;
+  width:50%;
+  justify-content: left;
+  margin-left: 10px;
+ }
+
+  #comm {
+    display:flex;
+    border:solid 2px;
+    border-color: black;
+    justify-content: center;
+    align-items: center;
+    margin:10px 2px 2px 2px;
+    padding:4px 4px 4px 4px;
+    width:30%;
+   
+  }
+ 
+  #vote {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border:solid 2px;
+    border-color: black;
+    margin:10px 20px 2px 2px;
+    width:20%;
+
+  }
+
+#vote-content{
+display:flex;
+flex-direction: row;
+
+}  
+  #pouce {
+    width:30px;
+  }
+
+  .affich-com {
+    display:flex;
+    flex-direction: column;
+    border:solid 2px;
+    border-color: black;
+    margin:10px 20px 10px 20px;
+    padding:4px 4px 4px 4px;
+  }

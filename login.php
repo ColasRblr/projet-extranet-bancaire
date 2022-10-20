@@ -4,26 +4,30 @@
   <meta charset="utf-8">
 
   <title>Connexion</title>
-  <link href="style.css" rel="stylesheet">
-  
+  <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css"/>
+  <link href="css/formulaire.css" rel="stylesheet">
 </head>
+
 <body>
-<form method="post" action="login-traitement.php">
 
-       <label for="username">Nom d'utilisateur :</label>
-       <input type="text" name="username" id="username" required="required"/>
+  </div>
+<div class="formulaire">
+  <div class="img">
+<img id="logo"src="img/GBAF-removed.png">
+</div>
+
+<form class="form" method="post" action="login-traitement.php">
+
+       <input type="text" class="text" placeholder="Identifiant" name="username" id="username" required="required"/>
        
-       <br />
-       <label for="password">Mot de passe :</label>
-       <input type="password" name="password" id="password" required="required" />
-       
-       <br/>
+       <input type="password" placeholder= "Mot de passe" name="password" id="password" required="required" />
+    
       <button id="login-btn" type="submit" name="connexion">Connexion</button>
+      
+      <button id="retour" onclick="window.location.href='home.php'"> Retour </button>
 </form>
+</div>
 
-<div> 
-<button onclick="window.location.href = 'reset-password.php'"> J'ai oublié mon mot de passe</button>
- </div>
- 
+
 </body>
 </html>

@@ -4,28 +4,31 @@
   <meta charset="utf-8">
 
   <title>Réinitialisation mot de passe</title>
-  <link href="style.css" rel="stylesheet">
-  
+  <link href="css/formulaire.css" rel="stylesheet">
 </head>
+
 <body>
 
-<form method="post" action="reset-password-traitement.php">
+<div class="formulaire">
+  <div class="img">
+<img id="logo"src="img/GBAF-removed.png">
+</div>
 
-       <label for="username">Nom d'utilisateur :</label>
-       <input type="text" name="username" id="username" required="required"/>
-       
-       <br />
-       <label for="reponse"> Répondez à la question secrète suivante : <br /> "Quel est le nom de famille de votre professeur d'enfance préféré ?" :</label>
-       <input type="text" name="reponse" id="reponse" required="required"/>
-       
-       <br />
-       <label for="password">Nouveau mot de passe :</label>
-       <input type="password" name="password" id="password" required="required"/>
+<form class="form" method="post" action="reset-password-traitement.php">
 
-       <br/>
+       <input type="text"  placeholder="Identifiant" class="text" name="username" id="username" required="required"/>
+    
+       <label for="reponse"> Répondez à la question secrète suivante : <br /> "Quel est le prénom de votre grand-mère maternelle ?"</label>
+       <input type="text" placeholder="Réponse" class="text"  name="reponse" id="reponse" required="required"/>     
+       
+       <input type="password" placeholder="Nouveau mot de passe" name="password" id="password" required="required"/>
+
       <button id="login-btn" type="submit" name="connexion">Enregistrer mon nouveau mot de passe</button>
-</form>
+      
+      <button id="retour" onclick="window.location.href='home.php'"> Retour </button></form>
+</div>
 
-  ...
+
 </body>
+
 </html>
