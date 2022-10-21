@@ -70,7 +70,7 @@ Le but du projet est donc de développer un extranet donnant accès à ces infor
 
 </div>
 
-<div class="divider"> </div>
+<div class="divider"></div>
 
 <h2> Liste des acteurs partenaires </h2>
 
@@ -88,17 +88,17 @@ foreach($acteurs as $acteur):
 ?>
 
 <article> 
+  <section id="logo-txt">
  <div id="logo">
   <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($acteur['logo']) .'" width=100px/>';?></div>
   <div id="article"><h3><?php echo $acteur['acteur']?></h3>
- <p> <?php echo substr($acteur['description'],0 , 80), '...';?> </p></div>
+ <div id="txt"><?php echo substr($acteur['description'],0 , 80), '...';?></div></div>
+</section>
 <section id="bouton">
-
 <form action="partners-details.php" method="POST">
 <input type="hidden" value='<?php echo $acteur['id_acteur']?>' name="id_acteur">
 <button id="suite"type="submit">Afficher la suite</button></section>
 </form>
-
 </article>
 
 <?php endforeach; ?>
