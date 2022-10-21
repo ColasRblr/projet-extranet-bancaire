@@ -76,7 +76,7 @@ $comment_user = $requete1 -> fetch();
 
  <section class="commentaire"> 
 
-  <div id="com-vote"><h2 id="titre-com">  <?= $number_comm ?> Commentaire(s): </h2>
+  <div id="com-vote"><h2 id="titre-com"> <?= $number_comm ?> Commentaire(s): </h2>
   <div id="comm"> <?php if (isset ($comment_user['id_user'])) {
   echo'Vous avez déjà posté un commentaire';
 } else {
@@ -113,8 +113,6 @@ $date= date_create ($commentaire['date_add']);
  <section class="affich-com"> <div><?php echo $commentaire['prenom'];?></div>
 <div><?php echo date_format($date,"d-m-Y");?></div>
 <div> <?php echo $commentaire ['post']; ?> </div> </section>
-
-
 
 <?php endforeach; ?>
 </section>
