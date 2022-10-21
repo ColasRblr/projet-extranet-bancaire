@@ -69,7 +69,7 @@ Le but du projet est donc de développer un extranet donnant accès à ces infor
 
 </div>
 
-<div class="divider"> </div>
+<div class="divider"></div>
 
 <h2> Liste des acteurs partenaires </h2>
 
@@ -100,8 +100,6 @@ foreach($acteurs as $acteur):
      <button id="suite" type="submit">Afficher la suite</button>
    </form>
   </div>
-
- </article>
 
 <?php endforeach; ?>
 

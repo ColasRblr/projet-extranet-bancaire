@@ -80,11 +80,12 @@
     width:40px;
   }
 
-#vote-content{
-display:flex;
-flex-direction: row;
-}  
 
+  
+#vote-content{
+display: flex;
+flex-direction: row;
+}
 
   .affich-com {
     display:flex;

@@ -112,8 +112,8 @@ $date= date_create ($commentaire['date_add']);
 ?>
  <div class="affich-com"> <div><?php echo $commentaire['prenom'];?></div>
 <div><?php echo date_format($date,"d-m-Y");?></div>
-<div> <?php echo $commentaire ['post']; ?> </div> </div>
 
+<div> <?php echo $commentaire ['post']; ?> </div> </div>
 
 <?php endforeach; ?>
 
