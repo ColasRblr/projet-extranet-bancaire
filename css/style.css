@@ -55,6 +55,8 @@ margin-left:5px;
 }
 
  #liste {
+  display:flex;
+  flex-direction: column;
   border:solid 2px;
   border-color:black;
   margin: 5px 5px 5px 5px;

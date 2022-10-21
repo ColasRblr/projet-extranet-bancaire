@@ -90,7 +90,7 @@ foreach($acteurs as $acteur):
   <div id="logo-txt">
    <div id="logo">
     <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($acteur['logo']) .'" width=100px/>';?></div>
-     <div id="article"><h3><?php echo $acteur['acteur']?></h3>
+     <div id="article"> <h3><?php echo $acteur['acteur']?></h3>
       <div id="txt"><?php echo substr($acteur['description'],0 , 80), '...';?></div></div>  
   </div>
 
@@ -100,8 +100,9 @@ foreach($acteurs as $acteur):
      <button id="suite" type="submit">Afficher la suite</button>
    </form>
   </div>
-
+</article>
 <?php endforeach; ?>
+
 
 </div>
 </div>
@@ -109,6 +110,7 @@ foreach($acteurs as $acteur):
 <footer>
 <?php include 'extensions/footer.php'; ?>
 </footer>
+
 </body>
 
 </html>
