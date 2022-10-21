@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -13,8 +14,8 @@
 <div class="formulaire">
 
   <div class="img">
-<img id="logo"src="img/GBAF-removed.png" >
-</div>
+   <img id="logo" src="img/GBAF-removed.png" alt="logo du GBAF"> 
+  </div>
 
 <form class="form" method="post" action='inscription-traitement.php'>
 
@@ -38,7 +39,5 @@
 </div>
 
 </body>
-
-
 
 </html>

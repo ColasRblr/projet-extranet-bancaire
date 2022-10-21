@@ -18,7 +18,7 @@
 
  <h1>Bienvenue sur l'extranet de GBAF</h1>
 
-<section id="home">
+<div id="home">
 
    <div id="inscription">
     <p>Si vous ne possédez pas encore de compte, veuillez cliquer ci-dessous afin de vous enregistrer pour avoir accès au service proposé par l'extranet</p>
@@ -28,11 +28,15 @@
    <div id="connexion"> 
     <p>Si vous possédez déjà un compte, connectez-vous ci-dessous afin d'accéder à votre page d'accueil utilisateur</p>
     <a href="login.php"> Se connecter </a> 
-   <button id="reset"onclick="window.location.href = 'reset-password.php'"> J'ai oublié mon mot de passe</button>
+   <button id="reset" onclick="window.location.href = 'reset-password.php'"> J'ai oublié mon mot de passe</button>
+   </div>
+
 </div>
+
 <div class="divider"> </div>
-</section>
+
 </div>
+
 </body>
 
  <?php include 'extensions/footer.php'; ?>

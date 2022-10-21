@@ -1,6 +1,4 @@
-<?php session_start () ?>
-
-    <?php
+<?php session_start () ;
 
 //variables à utiliser plus bas
 $id_user=$_SESSION['id_user'];
@@ -46,5 +44,4 @@ include 'config.php';
 
         header("location: partners-details.php?id_acteur=".$id_acteur)
  
-
 ?>

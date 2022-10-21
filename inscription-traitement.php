@@ -1,12 +1,3 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-
-  <title>Paramètres du compte</title>
-  <link href="css/formulaire.css" rel="stylesheet">
-<body>
-  
   <?php
 
 require ('config.php');
@@ -39,5 +30,4 @@ VALUES( '$_POST[nom]','$_POST[prenom]','$_POST[username]','$passwordhash','$_POS
 
         echo "<div> Inscription réussie !<br> <a href='home.php'>Retour à la page d'accueil</a</div>";}
             ?> 
-            </body>
-            </html>
+           

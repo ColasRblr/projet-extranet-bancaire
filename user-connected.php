@@ -1,18 +1,4 @@
-  <?php
- session_start ();?> 
-
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-
-  <title>Connexion utilisateur</title>
-  <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css"/>
-  <link href="css/style.css" rel="stylesheet">
-
-</head>
-<?php 
-//on va chercher les infos sur les partenaires dans la bdd
+<?php  session_start ();
 
 //on se connecte à la base
 include 'config.php';
@@ -25,11 +11,24 @@ $requete=$conn->query($sql);
 
 //on récupère les données
 $acteurs = $requete -> fetchAll();
-?><header>
-<?php include 'extensions/header.php'; ?>
-</header>
+?>
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+
+  <title>Connexion utilisateur</title>
+  <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css"/>
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
 
 <body >
+
+<header>
+<?php include 'extensions/header.php'; ?>
+</header>
 
 
   <!--<div class="loader">
@@ -43,7 +42,7 @@ $acteurs = $requete -> fetchAll();
 </form>
 </div> -->
 
-<section class="page">
+<sdiv class="page">
 
 <div id="presentation-gbaf">
 <h1>Qu'est-ce que le GBAF ? </h1> 
@@ -66,7 +65,7 @@ Chaque salarié pourra ainsi poster un commentaire et donner son avis.
 Le but du projet est donc de développer un extranet donnant accès à ces informations.</p>
 
 <div class="frise">
-<img id="illustration" src="img/gbaf-logo.png" width=100px></div>
+<img id="illustration" src="img/gbaf-logo.png" alt="logo du GBAF"></div>
 
 </div>
 
@@ -88,27 +87,30 @@ foreach($acteurs as $acteur):
 ?>
 
 <article> 
- <div id="logo">
-  <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($acteur['logo']) .'" width=100px/>';?></div>
-  <div id="article"><h3><?php echo $acteur['acteur']?></h3>
- <p> <?php echo substr($acteur['description'],0 , 80), '...';?> </p></div>
-<section id="bouton">
+  <div id="logo-txt">
+   <div id="logo">
+    <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($acteur['logo']) .'" width=100px/>';?></div>
+     <div id="article"><h3><?php echo $acteur['acteur']?></h3>
+      <div id="txt"><?php echo substr($acteur['description'],0 , 80), '...';?></div></div>  
+  </div>
 
-<form action="partners-details.php" method="POST">
-<input type="hidden" value='<?php echo $acteur['id_acteur']?>' name="id_acteur">
-<button id="suite"type="submit">Afficher la suite</button></section>
-</form>
+  <div id="bouton">
+   <form action="partners-details.php" method="POST">
+    <input type="hidden" value='<?php echo $acteur['id_acteur']?>' name="id_acteur">
+     <button id="suite" type="submit">Afficher la suite</button>
+   </form>
+  </div>
 
-</article>
+ </article>
 
 <?php endforeach; ?>
 
 </div>
-</section>
+</div>
 
-
-</body>
 <footer>
 <?php include 'extensions/footer.php'; ?>
 </footer>
+</body>
+
 </html>

@@ -1,13 +1,5 @@
-<?php session_start() ?>
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
+<?php session_start()  ;
 
-  <title>Paramètres du compte</title>
-  <link href="css/formulaire.css" rel="stylesheet">
-
-<?php 
 include 'config.php';
 //on crée la variable $id_user
 
@@ -20,6 +12,13 @@ $check->execute(array($id_user));
 $data = $check->fetch();
 ?>
   
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+
+  <title>Paramètres du compte</title>
+  <link href="css/formulaire.css" rel="stylesheet">
 </head>
 
 
@@ -36,21 +35,17 @@ $data = $check->fetch();
        <input type="text"  name="nom_new" value="<?php echo $data['nom']?>" id="nom_new"/>
 
        <label for="prenom_new">Prénom</label>
-       <input type="text" name="prenom_new" value="<?php echo $data['prenom']?>"id="prenom_new"/>
+       <input type="text" name="prenom_new" value="<?php echo $data['prenom']?>" id="prenom_new"/>
 
        <label for="password_new">Mot de passe </label>
        <input type="password" name="password_new" id="password_new"/>
 
       <button id="login-btn" type="submit" name="username-modif">Enregistrer mes modifications</button>
 
-    <div class="bouton-retour">
-    
 </form>
-  
-     
-     
+     <div class="bouton-retour"> <button id="retour" onclick="window.location.href='user-connected.php'"> Retour </button> </div>
 </div>
- <button id="retour" onclick="window.location.href='user-connected.php'"> Retour </button> </div>
+  
 
 </body>
 

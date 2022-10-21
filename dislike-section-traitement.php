@@ -1,6 +1,5 @@
-<?php session_start()?>
+<?php session_start();
 
-<?php
 include 'config.php';
 $id_user=$_SESSION['id_user'];
 $id_acteur=$_POST['id_acteur'];

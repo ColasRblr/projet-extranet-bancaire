@@ -1,20 +1,8 @@
-<?php session_start () ?>
+<?php session_start () ;
 
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
+//on inclut le header
+include 'extensions/header.php';
 
-  <title>Partenaires bancaires</title>
-  <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css"/>
-  <link href="css/details.css" rel="stylesheet">
-  
-</head>
-
-<?php //on inclut le header
-include 'extensions/header.php'; ?>
-
-<?php 
 //on inclue les infos de connexion à la bdd
 include 'config.php';
 
@@ -32,15 +20,26 @@ $sql->execute(array($id_acteur));
 $res= $sql->fetch();
 ?>
 
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+
+  <title>Partenaires bancaires</title>
+  <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css"/>
+  <link href="css/details.css" rel="stylesheet">
+  
+</head>
+
 <body>
 
-<section class="page">
+<div class="page">
 
-<section class="partner">
+<div class="partner">
 <div id='logo'> <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($res['logo']) .'" width=150px/>'; ?> </div>
  <h2> <?php echo $res['acteur'] ;?> </h2>
 <div class="description"> <p><?php echo $res['description'];?></p></div>
-</section>
+</div>
 
 
 <?php
@@ -74,16 +73,17 @@ $comment_user = $requete1 -> fetch();
 
 //S'il n'a pas déjà commenté : on lui affiche le formulaire de commentaire?>
 
- <section class="commentaire"> 
+ <div class="commentaire"> 
 
-  <div id="com-vote"><h2 id="titre-com">  <?= $number_comm ?> Commentaire(s): </h2>
-  <div id="comm"> <?php if (isset ($comment_user['id_user'])) {
+  <div id="com-vote">
+    <h2 id="titre-com">  <?= $number_comm ?> Commentaire(s): </h2>
+    <div id="comm"> <?php if (isset ($comment_user['id_user'])) {
   echo'Vous avez déjà posté un commentaire';
 } else {
  echo"
  <form method='post' action='comment-section-traitement.php'>
  <label for='commentaire'>Nouveau commentaire:</label>
- <input type='textarea' name='commentaire' id='commentaire' required='required'/>
+ <input type='text' name='commentaire' id='commentaire' required='required'/>
  <input type='hidden' value='$id_acteur' name='id_acteur'/>
  <button type='submit'> Envoyer </button>
  </form>";
@@ -95,13 +95,13 @@ $comment_user = $requete1 -> fetch();
 <form method='post' action='like-section-traitement.php'>
  <input type='hidden' value='<?= $id_acteur?>' name='id_acteur'/>
  <input type='hidden' value='<?=$like?>' name='like'>
- <button type='submit'> <img id="pouce"src="img/pouce-haut.png"></button>
+ <button type='submit'> <img class="pouce" src="img/pouce-haut.png" alt="pouce vers le haut"></button>
  </form>
 
 <form method='post' action='dislike-section-traitement.php'>
  <input type='hidden' value='<?=$id_acteur?>' name='id_acteur'/>
  <input type='hidden' value='<?=$dislike?>' name='dislike'>
- <button type='submit'><img id="pouce"src="img/pouce-bas.png"> </button>
+ <button type='submit'><img class="pouce" src="img/pouce-bas.png" alt="pouce vers le bas"> </button>
  </form>
 <?= $number_dislike ?></div> </div></div>
 
@@ -110,17 +110,15 @@ $comment_user = $requete1 -> fetch();
 foreach ($commentaires as $commentaire): 
 $date= date_create ($commentaire['date_add']);
 ?>
- <section class="affich-com"> <div><?php echo $commentaire['prenom'];?></div>
+ <div class="affich-com"> <div><?php echo $commentaire['prenom'];?></div>
 <div><?php echo date_format($date,"d-m-Y");?></div>
-<div> <?php echo $commentaire ['post']; ?> </div> </section>
-
+<div> <?php echo $commentaire ['post']; ?> </div> </div>
 
 
 <?php endforeach; ?>
-</section>
-</section> 
 
-
+</div>
+</div> 
 
 </body>
 <?php include 'extensions/footer.php'; ?>
