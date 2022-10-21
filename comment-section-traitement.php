@@ -1,11 +1,5 @@
-<?php session_start () ?>
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <body>
-    
-    <?php
+<?php session_start () ;
+
 
 require ('config.php');
 
@@ -26,6 +20,3 @@ $id_user=$_SESSION['id_user'];
 //renvoi à la page sur laquelle est l'utilisateur 
 header("location: partners-details.php?id_acteur=".$id_acteur)
 ?>
-
-</body>
-</html>

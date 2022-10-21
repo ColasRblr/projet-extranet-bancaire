@@ -23,11 +23,11 @@ $requete->execute(array('id_user'=>$_SESSION['id_user']));
 $resultat = $requete->fetch();
 
 ?>
-<section class="header-connecte">
+<div class="header-connecte">
 
-   <div class="left"> <img class="logo"src="img/GBAF-removed.png" width=40px> </div>
+   <div class="left"> <img class="logo" src="img/GBAF-removed.png" alt="Logo du GBAF" > </div>
    
-<section class="param">
+<div class="param">
 
 <div class="user">
 <img class="logo-user"src="img/logo-user.png">
@@ -36,19 +36,21 @@ $resultat = $requete->fetch();
 
   <div id="boutons"><?php echo "<br/><button class='btn-header' onclick='window.location.href = `account-settings.php`'> Paramètres du compte</button>"; ?>
  <?php echo "<br/><button class='btn-header' onclick='window.location.href = `deconnexion.php`'> Se déconnecter</button>";?> </div>
-</section>
+</div>
 
- </section>  
+</div>  
  
   <?php 
   } 
   //si le header est présent sur une page non connectée, on affiche un header neutre avec un simple message d'accueil
   else { ?>
 
-<section class="header-non-connecte">
-<div class="logo">
-  <img src="img/GBAF-removed.png" width=80px></div>
-</section>
+<div class="header-non-connecte">
+ <div class="logo">
+  <img src="img/GBAF-removed.png" alt="logo du GBAF"> </div>
+
+  </div>
+  
 <?php } ?>
   
 </body>

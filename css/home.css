@@ -23,12 +23,14 @@
     font-weight: 400;
     transition: all 0.3s;
   }
+  
   button:hover {
     cursor: pointer;
   border:1px solid rgba(252, 4, 4, 0.5);
   background-color: transparent;
   color:rgba(252, 4, 4, 0.5);
     }
+
     p{
       text-align: justify;
     }
@@ -62,8 +64,9 @@
     }
 
     .divider {
-      margin: 20px;
-      height:px;
-      color: black;
-      position:absolute;
-    }
+        display:flex;
+        height:2px;
+        background-color: black;
+        margin:20px 50px 0px 20px;
+      }
+      

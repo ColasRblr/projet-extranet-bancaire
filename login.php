@@ -10,10 +10,10 @@
 
 <body>
 
-  </div>
 <div class="formulaire">
-  <div class="img">
-<img id="logo"src="img/GBAF-removed.png">
+  
+<div class="img">
+ <img id="logo" src="img/GBAF-removed.png" alt="logo du GBAF">
 </div>
 
 <form class="form" method="post" action="login-traitement.php">

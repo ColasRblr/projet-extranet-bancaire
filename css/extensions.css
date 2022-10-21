@@ -24,6 +24,7 @@ color:white;
 
 .logo {
     display:flex;
+    flex-direction: row;
     justify-content: center;
     width:80px;
     height:80px;

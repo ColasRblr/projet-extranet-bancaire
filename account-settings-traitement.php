@@ -1,13 +1,4 @@
-<?php session_start() ?>
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-
-  <title>Paramètres du compte</title>
-  <link href="css/formulaire.css" rel="stylesheet">
-
-<?php
+<?php session_start() ;
 
 //On inclue la connexion à la BDD
   require_once 'config.php'; 
@@ -63,8 +54,17 @@
                          $conn->exec($update_password);
               };
               ?>
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+
+  <title>Paramètres du compte</title>
+  <link href="css/formulaire.css" rel="stylesheet">
+
 <body>
-         <div> Vos informations ont été modifiées ! <br> Vous pouvez vous rendre sur la <a href='user-connected.php'> page d'accueil de votre compte </a>
+         <div> Vos informations ont été modifiées ! <br> Vous pouvez vous rendre sur la <a href='user-connected.php'> page d'accueil de votre compte </a> </div>
 
             </body>
             </html>

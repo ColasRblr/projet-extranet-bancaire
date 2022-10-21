@@ -11,10 +11,10 @@
 
 <div class="formulaire">
   <div class="img">
-<img id="logo"src="img/GBAF-removed.png">
-</div>
+   <img id="logo" src="img/GBAF-removed.png" alt="logo du GBAF">
+  </div>
 
-<form class="form" method="post" action="reset-password-traitement.php">
+    <form class="form" method="post" action="reset-password-traitement.php">
 
        <input type="text"  placeholder="Identifiant" class="text" name="username" id="username" required="required"/>
     
@@ -25,7 +25,9 @@
 
       <button id="login-btn" type="submit" name="connexion">Enregistrer mon nouveau mot de passe</button>
       
-      <button id="retour" onclick="window.location.href='home.php'"> Retour </button></form>
+      <button id="retour" onclick="window.location.href='home.php'"> Retour </button>
+    </form>
+
 </div>
 
 
