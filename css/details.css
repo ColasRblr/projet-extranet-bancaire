@@ -73,7 +73,11 @@ p {
     border-color: black;
     margin:10px 20px 2px 2px;
     width:30%;
+  }
 
+  #number_like, #number_dislike {
+    display:flex;
+    align-items: center;
   }
 
     .pouce {

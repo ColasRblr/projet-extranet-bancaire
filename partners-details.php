@@ -88,7 +88,7 @@ $comment_user = $requete1 -> fetch();
 
 <div id="vote">
   <div id="vote-content">
-  <?= $number_like ?>
+  <div id="number_like"> <?= $number_like ?> </div>
 <form method='post' action='like-section-traitement.php'>
  <input type='hidden' value='<?= $id_acteur?>' name='id_acteur'/>
  <input type='hidden' value='<?=$like?>' name='like'>
@@ -100,7 +100,7 @@ $comment_user = $requete1 -> fetch();
  <input type='hidden' value='<?=$dislike?>' name='dislike'>
  <button type='submit'><img class="pouce" src="img/pouce-bas.png" alt="pouce vers le bas"> </button>
  </form>
-<?= $number_dislike ?></div> </div></div>
+<div id="number_dislike"> <?= $number_dislike ?></div> </div></div></div>
 
  <?php
 //on affiche tous les commentaires concernant ce partenaire avec les infos de prénom (id_user pour l'instant) et date

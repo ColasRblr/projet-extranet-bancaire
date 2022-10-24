@@ -18,7 +18,12 @@
 
        <input type="text"  placeholder="Identifiant" class="text" name="username" id="username" required="required"/>
     
-       <label for="reponse"> Répondez à la question secrète suivante : <br /> "Quel est le prénom de votre grand-mère maternelle ?"</label>
+       <label for="question-select"> Quelle était la question secrète de votre choix ? </label> 
+       <select name="question" id="question-select">
+    <option value="g-m">Quel est le prénom de votre grand-mère maternelle ?</option>
+    <option value="animal">Quel est le nom de votre premier animal de compagnie ?</option>
+    <option value="adresse">Quel est le nom de la rue où vous avez grandi ?</option>
+</select>
        <input type="text" placeholder="Réponse" class="text"  name="reponse" id="reponse" required="required"/>     
        
        <input type="password" placeholder="Nouveau mot de passe" name="password" id="password" required="required"/>

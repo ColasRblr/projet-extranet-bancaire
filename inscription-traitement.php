@@ -17,7 +17,9 @@ $nom = htmlspecialchars($_POST['nom']);
 $prenom = htmlspecialchars($_POST['prenom']);
 $username = htmlspecialchars($_POST['username']); 
 $password = htmlspecialchars($_POST['password']);
+$question = implode([$_POST['question']]);
 $reponse = htmlspecialchars($_POST['reponse']);
+
         
 //on sécurise le mdp
 $passwordhash = password_hash ($_POST['password'], PASSWORD_DEFAULT);
@@ -33,8 +35,8 @@ if($username= $compte_user){
 }
 
 else{ //insérer données du formulaire dans BDD
-  $sql = "INSERT INTO `account` ( `nom`, `prenom`, `username`, `password`, `reponse`)
-VALUES( '$_POST[nom]','$_POST[prenom]','$_POST[username]','$passwordhash','$_POST[reponse]')
+  $sql = "INSERT INTO `account` ( `nom`, `prenom`, `username`, `password`, `question`,`reponse`)
+VALUES( '$_POST[nom]','$_POST[prenom]','$_POST[username]','$passwordhash', '$question', '$_POST[reponse]')
 ";
   $conn->exec($sql);
 
