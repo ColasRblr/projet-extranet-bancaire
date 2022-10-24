@@ -25,7 +25,7 @@ $resultat = $requete->fetch();
 ?>
 <div class="header-connecte">
 
-   <div class="left"> <img class="logo" src="img/GBAF-removed.png" alt="Logo du GBAF" > </div>
+   <div class="left"> <a href="user-connected.php"> <img id="logo-connected" src="img/GBAF-removed.png" alt="Logo du GBAF"></a></div>
    
 <div class="param">
 
@@ -46,8 +46,8 @@ $resultat = $requete->fetch();
   else { ?>
 
 <div class="header-non-connecte">
- <div class="logo">
-  <img src="img/GBAF-removed.png" alt="logo du GBAF"> </div>
+ <div id="logo-disconnected">
+ <img src="img/GBAF-removed.png" alt="logo du GBAF"width="100px"> </div>
 
   </div>
   

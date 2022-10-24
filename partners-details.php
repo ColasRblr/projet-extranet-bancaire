@@ -30,13 +30,10 @@ $res= $sql->fetch();
   <link href="css/details.css" rel="stylesheet">
   
 </head>
-
 <body>
-
-<div class="page">
-
-<div class="partner">
-<div id='logo'> <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($res['logo']) .'" width=150px/>'; ?> </div>
+  <div class="page">
+    <div class="partner">
+      <div id='logo'> <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($res['logo']) .'" width=150px/>'; ?> </div>
  <h2> <?php echo $res['acteur'] ;?> </h2>
 <div class="description"> <p><?php echo $res['description'];?></p></div>
 </div>
@@ -60,7 +57,7 @@ $number_dislike = $conn->query("SELECT COUNT(*) FROM vote WHERE vote = -1 AND id
 $number_comm = $conn->query("SELECT COUNT(*) FROM post WHERE id_acteur='$id_acteur'")->fetchColumn();
 
 //on affiche les commentaires de ce partenaire
-$sql1= "SELECT * FROM Post INNER JOIN Account ON account.id_user = post.id_user WHERE post.id_acteur='$id_acteur'";
+$sql1= "SELECT * FROM Post INNER JOIN Account ON account.id_user = post.id_user WHERE post.id_acteur='$id_acteur' ORDER BY id_post DESC";
 $req=$conn->query($sql1);
 $commentaires=$req->fetchAll(); 
 
@@ -110,8 +107,8 @@ $comment_user = $requete1 -> fetch();
 foreach ($commentaires as $commentaire): 
 $date= date_create ($commentaire['date_add']);
 ?>
- <div class="affich-com"> <div><?php echo $commentaire['prenom'];?></div>
-<div><?php echo date_format($date,"d-m-Y");?></div>
+ <div class="affich-com"> <div id="prenom"><?php echo $commentaire['prenom'];?></div>
+<div id="date"><?php echo date_format($date,"d-m-Y");?></div>
 
 <div> <?php echo $commentaire ['post']; ?> </div> </div>
 

@@ -1,4 +1,14 @@
-<?php
+
+            <!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+
+  <title>Paramètres du compte</title>
+  <link href="css/formulaire.css" rel="stylesheet">
+  <body>
+  
+  <?php
 
   //On inclue la connexion à la BDD
   require_once 'config.php'; 
@@ -38,4 +48,7 @@
             }
    }
             ?>
+
+            </body>
+            </html>
  

@@ -36,10 +36,10 @@
 <div class="divider"> </div>
 
 </div>
-
+ <?php include 'extensions/footer.php'; ?>
 </body>
 
- <?php include 'extensions/footer.php'; ?>
+
 
 </html>
  

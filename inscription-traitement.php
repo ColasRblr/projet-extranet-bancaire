@@ -1,3 +1,13 @@
+  
+            <!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+
+  <title>Paramètres du compte</title>
+  <link href="css/formulaire.css" rel="stylesheet">
+  <body>
+  
   <?php
 
 require ('config.php');
@@ -19,7 +29,7 @@ $requete=$conn->query($check);
 $compte_user = $requete -> fetchAll();
 
 if($username= $compte_user){
-  echo "ce pseudo est déjà utilisé <br/>  <a href='inscription.php'>Retour au formulaire d'inscription</a<";
+  echo "Ce pseudo est déjà utilisé <br/>  <a href='inscription.php'>Retour au formulaire d'inscription</a<";
 }
 
 else{ //insérer données du formulaire dans BDD
@@ -30,4 +40,7 @@ VALUES( '$_POST[nom]','$_POST[prenom]','$_POST[username]','$passwordhash','$_POS
 
         echo "<div> Inscription réussie !<br> <a href='home.php'>Retour à la page d'accueil</a</div>";}
             ?> 
-           
+              
+
+</body>
+</html>
