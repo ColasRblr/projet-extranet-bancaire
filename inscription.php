@@ -8,7 +8,6 @@
   <link href="css/formulaire.css" rel="stylesheet">
   
 </head>
-
 <body>
 
 <div class="formulaire">
@@ -26,8 +25,14 @@
        <input type="text" class="text"  placeholder="Identifiant" name="username" id="username" required="required" />    
     
        <input type="password" placeholder="Mot de passe"  name="password" id="password" required="required"/>
-     
-       <label for="reponse"> Question secrète : quel est le prénom de votre grand-mère maternelle ?</label>
+      
+       <label for="question-select">Choisissez votre question secrète</label>
+
+      <select name="question" id="question-select">
+    <option value="g-m">Quel est le prénom de votre grand-mère maternelle ?</option>
+    <option value="animal">Quel est le nom de votre premier animal de compagnie ?</option>
+    <option value="adresse">Quel est le nom de la rue où vous avez grandi ?</option>
+</select>
        <input type="text"  class="text" placeholder="Réponse" name="reponse" id="reponse" required="required"/>
 
        <button type="submit" >S'inscrire</button>

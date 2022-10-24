@@ -30,8 +30,6 @@ $acteurs = $requete -> fetchAll();
 <?php include 'extensions/header.php'; ?>
 </header>
 
-<div id="transition_page" class=" transition active"></div>
-
  <!--<div class="loader">
 
 <form class="form" >

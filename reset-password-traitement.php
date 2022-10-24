@@ -1,5 +1,4 @@
-
-            <!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -20,9 +19,10 @@
       $username = strip_tags($_POST['username']); 
       $reponse = strip_tags($_POST['reponse']);
       $password = strip_tags($_POST['password']);
+      $question = implode([$_POST['question']]);
       
       // On regarde si l'utilisateur est inscrit dans la table Account
-      $check = $conn->prepare('SELECT username reponse FROM Account WHERE username=?');
+      $check = $conn->prepare('SELECT username, reponse, question FROM Account WHERE username=?');
       $check->execute(array($username));
       $data = $check->fetch();
       $row = $check->rowCount();
@@ -30,6 +30,8 @@
       
      // Si > à 0 alors l'utilisateur est présent dans la table account
          if($row > 0) {
+            //Si la question sélectionnée est la bonne
+            if($question === $data['question']){
               // Si la réponse est la bonne
               if($reponse === $data['reponse']) {
                  // On autorise la modification du mot de passe dans la BDD en le sécurisant
@@ -43,7 +45,10 @@
               } else {
                  echo "Vous n'avez pas répondu correctement à la question secrète<br><a href='reset-password.php'> Essayez à nouveau </a>"; 
                      }
-         } else { 
+         } else { echo "Vous aviez choisi une autre question secrète lors de votre inscription<br><a href='reset-password.php'> Essayez à nouveau </a>";
+        }
+        
+        } else { 
                 echo "Utilisateur non reconnu <br><a href='reset-password.php'> Essayez à nouveau </a>";
             }
    }
