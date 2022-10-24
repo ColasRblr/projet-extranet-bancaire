@@ -1,19 +1,19 @@
 /* Eléments communs sur les 3 pages Home, User-connected et Partner-details*/
 .page {  
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    font-family: 'scramblemixed-regular', sans-serif;
-    background:#eae4e4 ;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  font-family: 'scramblemixed-regular', sans-serif;
+  background:#eae4e4 ;
+}
   
-  img{
-    width:50%;
-  }
+img {
+  width:50%;
+}
   
-    p{
-      text-align: justify;
-    }
+p {
+  text-align: justify;
+}
 
 
 #logo {
@@ -36,7 +36,7 @@
     flex-direction: column;
     border:solid 2px;
     border-color: black;
-    margin:0 0 20px 0;
+    margin:0 0px 20px 00px;;
   }
 
  #com-vote {
@@ -80,7 +80,6 @@
     width:40px;
   }
 
-
   
 #vote-content{
 display: flex;
@@ -96,6 +95,14 @@ flex-direction: row;
     padding:4px 4px 4px 4px;
   }
 
+  #prenom {
+    font-weight: bold;
+  }
+
+  #date {
+    font-style:italic;
+  }
+
   @media screen and (max-width:768px) {
     #pouce {
       width:20px;
@@ -104,6 +111,25 @@ flex-direction: row;
   h2 {
     font-size: 1em;
   }
-    
+  #com-vote {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
- 
+
+  #com {
+margin:3px 3px 3px 3px;
+
+  }
+#vote {
+  margin:0 0 0 0;
+}
+
+#titre-com {
+  display:flex;
+  width:100%;
+  margin: 10px 0 0 20px;
+  white-space: nowrap;
+ }
+
