@@ -1,3 +1,5 @@
+<link href="css/formulaire.css" rel="stylesheet">
+
 <?php 
 //On inclue la connexion à la BDD
 require_once 'config.php'; 
@@ -30,11 +32,11 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
          die();
       //Si mauvais mot de passe : message à l'utilisateur
       } else { 
-         echo "Mot de passe invalide"; 
+         echo "Mot de passe invalide <br/> <a href='login.php'>Retour au formulaire de connexion</a>"; 
             }
    //Si < 0 : alors l'utilisateur n'est pas présent dans la BDD
    } else {
-      echo "Utilisateur non reconnu";
+      echo "Utilisateur non reconnu <br/> <a href='login.php'>Retour au formulaire de connexion</a>";
          }
  }
 ?>

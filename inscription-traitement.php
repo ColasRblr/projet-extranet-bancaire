@@ -22,7 +22,7 @@ $compte_user = $requete -> fetchAll();
 
 //Si l'identifiant existe déjà, on le signale à l'utilisateur pour qu'il en choisisse un autre
 if($username= $compte_user){
-  echo "Ce pseudo est déjà utilisé <br/>  <a href='inscription.php'>Retour au formulaire d'inscription</a<";
+  echo "Ce pseudo est déjà utilisé <br/>  <a href='inscription.php'>Retour au formulaire d'inscription</a>";
 //Si l'identifiant n'existe pas, on autorise l'utilisateur à s'inscrire en insérant ses données dans la BDD
 } else {
   $sql = "INSERT INTO `account` ( `nom`, `prenom`, `username`, `password`, `question`,`reponse`) 
