@@ -1,3 +1,4 @@
+/*Mise en forme générale et du fond derrière le formulaire*/
 body {
   display: flex;
   flex-direction: column;
@@ -13,12 +14,14 @@ body {
   flex-direction: column;
 }
 
+/*Formulaire*/
 form {
-display: flex;
-flex-direction: column; 
+  display: flex;
+  flex-direction: column; 
 }
 
-.img{
+/*Logo à gauche du formulaire*/
+.img {
   display:flex;
   justify-content: center;
   align-items: center;
@@ -28,6 +31,7 @@ img{
   width: 50%;
 }
 
+/*Mise en forme des label, input et button*/
 label {
   padding: 5px;
   color: rgb(9, 9, 9);
@@ -39,14 +43,11 @@ input {
   outline: none;
   border: none;
   border-radius: 15px;
-
   background-color:  rgba(252, 4, 4, 0.2) ;
 }
 
-
 ::placeholder {
- font-size: 1.3em;
-
+  font-size: 1.3em;
 }
 
 input.text {
@@ -68,8 +69,7 @@ button {
 
 button:hover {
   cursor: pointer;
-border:1px solid rgba(252, 4, 4, 0.5);
-background-color: transparent;
-color:rgba(252, 4, 4, 0.5);
-  }
-
+  border:1px solid rgba(252, 4, 4, 0.5);
+  background-color: transparent;
+  color:rgba(252, 4, 4, 0.5);
+}

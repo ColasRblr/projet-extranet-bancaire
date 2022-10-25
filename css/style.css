@@ -1,3 +1,4 @@
+/*Données générales sur la page html*/
 .page {  
   display: flex;
   flex-direction: column;
@@ -38,12 +39,13 @@ h1, h2 {
   margin-left:5px;
 }
 
+/*Logo et divider au milieu de la page*/
 .frise {
   display:flex;
   justify-content: center;
 }
 
- #illustration {
+#illustration {
   width:100px;
  }
 
@@ -54,16 +56,16 @@ h1, h2 {
   margin:20px 20px 20px 20px;
 }
 
- #liste {
+/*Liste des miniatures sur les acteurs*/
+#liste {
   display:flex;
   flex-direction: column;
   border:solid 2px;
   border-color:black;
   margin: 5px 5px 5px 5px;
-
  }
 
- article {
+article {
   display:flex;
   border:solid 2px;
   border-color:black;
@@ -73,38 +75,36 @@ h1, h2 {
   margin-bottom: 10px;
   flex-direction: row;
   padding-right: 10px;
- }
+}
 
- #logo-txt {
+#logo-txt {
   display:flex;
   flex-direction: row;
- }
+}
 
-  #logo{
-    display:flex;
-    justify-content: flex-start;
-    margin-left:20px;
-    align-items: center;
-    width:30%;
-  }
+#logo{
+  display:flex;
+  justify-content: flex-start;
+  margin-left:20px;
+  align-items: center;
+  width:30%;
+}
 
-  #article {
-    display: flex;
-    flex-direction: column;
-    width:60%;
-  }
+#article {
+  display: flex;
+  flex-direction: column;
+  width:60%;
+}
 
 #bouton {
   display:flex;
-    justify-content: flex-end;
-    align-items:flex-end;
-    width:30%;
+  justify-content: flex-end;
+  align-items:flex-end;
+  width:30%;
 }
 
 /*Responsive tablette*/
-
 @media screen and (max-width: 992px) {
-
   p {
     display: flex;
     flex-direction: row;
@@ -134,13 +134,11 @@ h1, h2 {
     display:flex;
     justify-content: flex-end;
     width:100%;
-}
+  }
 }
 
 /*Responsive mobile*/
-
 @media screen and (max-width: 768px) {
-
   #logo-txt {
     display:flex;
     flex-direction: column;
@@ -148,7 +146,7 @@ h1, h2 {
    }
 
   #txt, h3 {
-  margin-left:5px;
+    margin-left:5px;
   }
 
   #article {
@@ -164,97 +162,4 @@ h1, h2 {
     margin:5px 5px 5px 5px ;
     width:100%;
   }
-
 }
-
-.transition{
-  position: fixed;
-  width:100%;
-  height:100%;
-  background: #222222;
-  z-index: 1;
-  opacity: 0;
-  pointer-events: none;
-  transition : ease-in 0.4s;
-}
-.transition.active{
-  opacity: 1;
-  pointer-events: none;
-}
-
-
-/*Animation loader avant page user-connected*
-
-.loader{
-position:absolute;
-height: 100%;
-width: 100%;
-font-family: 'scramblemixed-regular', sans-serif;
-background: linear-gradient(to top left, #eae4e4 10%, #808080 100%);
-animation: hideLoader 5s forwards;
-animation-iteration-count: 1;
-}
-
-form {
- display:flex;
-flex-direction: column;
-justify-content: center;
-height: 100%;
-width: 100%;
-display: flex;
-flex-direction: column; 
-}
-
-#username, #password {
-padding: 15px;
-margin: 5px 0;
-display:flex;
-justify-content:center;
-outline: none;
-border: none;
-background-color: rgba(252, 4, 4, 0.2) ;
-}
-
-@keyframes hideLoader
-{
-
-  0%{
-    opacity:1;
-  }
-  50%{
-    opacity:1;
-  }
-  100%
-  {
-    opacity: 0;
-    display: none;
-  }
-}
-
-.page {
-z-index: -1;
-  height: 100%;
-  width: 100%;
- animation: pageappear 5s forwards ;
- animation-iteration-count: 1;
-
-}
-
-@keyframes pageappear
-{
-  0%{
-    opacity:0;
-    display:none;
-  }
-  50%{
-    opacity:0;
-    display:none;
-  }
-  100%
-  {
-    opacity: 1;
-  }
-} */
-
-
- 
