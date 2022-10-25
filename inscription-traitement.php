@@ -1,3 +1,5 @@
+<link href="css/formulaire.css" rel="stylesheet">
+
 <?php
 //On inclue la connexion à la BDD
 require ('config.php');
