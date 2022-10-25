@@ -1,4 +1,4 @@
-/* Eléments communs sur les 3 pages Home, User-connected et Partner-details*/
+/* Données générales sur la page html */
 .page {  
   display: flex;
   flex-direction: column;
@@ -14,107 +14,112 @@ img {
 p {
   text-align: justify;
 }
-
-
-#logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
-}
-  
+ 
+/*Mise en forme de la présentation de l'acteur*/
 .partner{
-    display:flex;
-    flex-direction: column;
-    border:solid 2px;
-    border-color: black;
-    margin:0 0 20px 0;
-    padding: 20px 20px 20px 20px;
+  display:flex;
+  flex-direction: column;
+  border:solid 2px;
+  border-color: black;
+  margin:0 0 20px 0;
+  padding: 20px 20px 20px 20px;
 }
+
+`/*Mise en forme du logo de l'acteur*/
+#logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/*Mise en forme de la partie commentaire-vote*/
 .commentaire {
-    display:flex;
-    flex-direction: column;
-    border:solid 2px;
-    border-color: black;
-    margin:0 0px 20px 00px;;
-  }
+  display:flex;
+  flex-direction: column;
+  border:solid 2px;
+  border-color: black;
+  margin:0 0px 20px 00px;;
+}
 
- #com-vote {
-    display:flex;
-    flex-direction: row;
-  }
+/*Ensemble fonctionnalité commentaire et fonctionnalité vote*/
+#com-vote {
+  display:flex;
+  flex-direction: row;
+}
 
- #titre-com {
+#titre-com {
   display:flex;
   width:50%;
   justify-content: left;
   margin-left: 20px;
   white-space: nowrap;
- }
-
-  #comm {
-    display:flex;
-    border:solid 2px;
-    border-color: black;
-    justify-content: center;
-    align-items: center;
-    margin:10px 2px 2px 2px;
-    padding:4px 4px 4px 4px;
-    width:30%;
-   
-  }
- 
-  #vote {
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border:solid 2px;
-    border-color: black;
-    margin:10px 20px 2px 2px;
-    width:30%;
-  }
-
-  #number_like, #number_dislike {
-    display:flex;
-    align-items: center;
-  }
-
-    .pouce {
-    width:40px;
-  }
-
-  
-#vote-content{
-display: flex;
-flex-direction: row;
 }
 
-  .affich-com {
-    display:flex;
-    flex-direction: column;
-    border:solid 2px;
-    border-color: black;
-    margin:10px 20px 10px 20px;
-    padding:4px 4px 4px 4px;
-  }
+#comm {
+  display:flex;
+  border:solid 2px;
+  border-color: black;
+  justify-content: center;
+  align-items: center;
+  margin:10px 2px 2px 2px;
+  padding:4px 4px 4px 4px;
+  width:30%; 
+}
+ 
+#vote {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border:solid 2px;
+  border-color: black;
+  margin:10px 20px 2px 2px;
+  width:30%;
+}
 
-  #prenom {
-    font-weight: bold;
-  }
+#number_like, #number_dislike {
+  display:flex;
+  align-items: center;
+}
 
-  #date {
-    font-style:italic;
-  }
+.pouce {
+  width:40px;
+}
 
-  @media screen and (max-width:768px) {
-    #pouce {
-      width:20px;
-    }
+#vote-content {
+  display: flex;
+  flex-direction: row;
+}
+
+/*Affichage des commentaires sur l'acteur*/
+.affich-com {
+  display:flex;
+  flex-direction: column;
+  border:solid 2px;
+  border-color: black;
+  margin:10px 20px 10px 20px;
+  padding:4px 4px 4px 4px;
+}
+
+#prenom {
+  font-weight: bold;
+}
+
+#date {
+  font-style:italic;
+}
+
+/*Media queries*/
+@media screen and (max-width:768px) {
+  #pouce {
+    width:20px;
+  }
 
   h2 {
     font-size: 1em;
   }
+  
   #com-vote {
     display:flex;
     flex-direction: column;
@@ -123,17 +128,16 @@ flex-direction: row;
   }
 
   #com {
-margin:3px 3px 3px 3px;
-
+    margin:3px 3px 3px 3px;
   }
-#vote {
-  margin:0 0 0 0;
-}
 
-#titre-com {
-  display:flex;
-  width:100%;
-  margin: 10px 0 0 20px;
-  white-space: nowrap;
+  #vote {
+    margin:0 0 0 0; 
+  }
+
+  #titre-com {
+    display:flex;
+    width:100%;
+    margin: 10px 0 0 20px;
+    white-space: nowrap;
  }
-
