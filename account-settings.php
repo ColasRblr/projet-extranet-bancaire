@@ -25,6 +25,9 @@ $data = $check->fetch();
 
   <body>
     <div class="formulaire">
+      <div class="img">
+        <img id="logo" src="img/GBAF-removed.png" alt="logo du GBAF">
+      </div>
       <form class="form" method="post" action="account-settings-traitement.php">
         <label for="username_new">Identifiant</label>
         <input type="text" name="username_new" value="<?php echo $data['username']?>" id="username_new"/>
