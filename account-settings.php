@@ -24,6 +24,12 @@ $data = $check->fetch();
     </head>
 
   <body>
+
+  <?php 
+   //On sécurise l'accès aux données seulement si utilisateur connecté, sinon on redirige vers home.php
+   if (isset ($_SESSION['id_user'])) {
+  ?>
+
     <div class="formulaire">
       <div class="img">
         <img id="logo" src="img/GBAF-removed.png" alt="logo du GBAF">
@@ -45,5 +51,11 @@ $data = $check->fetch();
       </form>
         <div class="bouton-retour"> <button id="retour" onclick="window.location.href='user-connected.php'"> Retour </button> </div>
     </div>
+
+    <?php } else {
+    header('Location:home.php');
+  }
+  ?>
+
   </body>
 </html>
