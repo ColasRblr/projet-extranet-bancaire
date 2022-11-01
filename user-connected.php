@@ -1,4 +1,5 @@
-<?php  
+
+  <?php  
 //On maintient l'ouverture de session
 session_start ();
 
@@ -12,7 +13,7 @@ $acteurs = $requete -> fetchAll();
 ?>
 
 <!doctype html>
-  <html lang="fr">
+<html lang="fr">
     <head>
       <meta charset="utf-8">
       <title>Connexion utilisateur</title>
@@ -20,12 +21,16 @@ $acteurs = $requete -> fetchAll();
       <link href="css/style.css" rel="stylesheet">
     </head>
 
-    <body >
+    <body>
 
       <header>
         <?php include 'extensions/header.php'; ?>
     </header>
 
+  <?php 
+    //On sécurise l'accès aux données seulement si utilisateur connecté, sinon on redirige vers home.php
+    if (isset ($_SESSION['id_user'])) {
+  ?>
       <div class="page">
         <div id="presentation-gbaf">
           <h1>Qu'est-ce que le GBAF ? </h1> 
@@ -93,6 +98,10 @@ $acteurs = $requete -> fetchAll();
     <footer>
       <?php include 'extensions/footer.php'; ?>
     </footer>
-
+ <?php } else {
+    header('Location:home.php');
+  }
+  ?>
   </body>
+ 
 </html>

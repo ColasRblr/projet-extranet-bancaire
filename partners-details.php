@@ -33,6 +33,11 @@ $res= $sql->fetch();
     </head>
 
   <body>
+
+  <?php 
+   //On sécurise l'accès aux données seulement si utilisateur connecté, sinon on redirige vers home.php
+   if (isset ($_SESSION['id_user'])) {
+  ?>
     <div class="page">
       
       <div class="partner">
@@ -126,6 +131,12 @@ $comment_user = $requete1 -> fetch();
       <?php endforeach; ?>
     </div>
   </div> 
+
+  <?php } else {
+    header('Location:home.php');
+  }
+  ?>
+
 </body>
   <?php include 'extensions/footer.php'; ?>
 </html>
