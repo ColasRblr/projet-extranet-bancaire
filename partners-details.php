@@ -95,8 +95,8 @@ $comment_user = $check1 -> fetch();
             echo"
               <form method='post' action='comment-section-traitement.php'>
               <label for='commentaire'>Nouveau commentaire:</label>
-              <input type='text' name='commentaire' id='commentaire' required='required'/>
-              <input type='hidden' value='$id_acteur' name='id_acteur'/>
+              <input type='text' name='commentaire' id='commentaire' required='required'>
+              <input type='hidden' value='$id_acteur' name='id_acteur'>
               <button type='submit'> Envoyer </button>
               </form>";
           }?>
