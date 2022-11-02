@@ -5,9 +5,6 @@ session_start() ;
 //On inclue la connexion à la BDD
 require_once 'config.php'; 
     
-//On crée la variable id_user pour identifier ensuite de quel utilisateur on modifie les données personnelles
-$id_user=$_SESSION ['id_user'];
-
 //1:Pour modifier le champ utilisateur : on vérifie que le champ est rempli
 if (!empty($_POST['username_new'])) {
   //On met à jour les données de l'utilisateur dans la BDD
@@ -22,7 +19,7 @@ if (!empty($_POST['nom_new'])) {
   $update_nom->execute(array(strip_tags($_POST['nom_new']),$_SESSION['id_user']));
 };
 
-                
+           
 //3:Pour modifier le champ prenom, on vérifie que le champ est rempli
 if (!empty($_POST['prenom_new'])) {
   //On met à jour les données de l'utilisateur dans la BDD

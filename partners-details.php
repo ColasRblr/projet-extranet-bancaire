@@ -6,9 +6,8 @@ session_start () ;
 //On inclue la connexion PDO à la BDD
 include 'config.php';
 
-//On crée les variables dont on a besoin : id_acteur et id_user
+//On crée la variable id_acteur pour les envois sur les pages de traitement (commentaire et vote)
 $id_acteur = $_POST['id_acteur'] = $_REQUEST['id_acteur'];
-$id_user=$_SESSION['id_user'];
 
 //On crée les variables like et dislike
 $like=1;
@@ -95,8 +94,8 @@ $comment_user = $check1 -> fetch();
             echo"
               <form method='post' action='comment-section-traitement.php'>
               <label for='commentaire'>Nouveau commentaire:</label>
-              <input type='text' name='commentaire' id='commentaire' required='required'/>
-              <input type='hidden' value='$id_acteur' name='id_acteur'/>
+              <input type='text' name='commentaire' id='commentaire' required='required'>
+              <input type='hidden' value='$id_acteur' name='id_acteur'>
               <button type='submit'> Envoyer </button>
               </form>";
           }?>
