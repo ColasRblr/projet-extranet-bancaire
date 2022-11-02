@@ -8,16 +8,14 @@ require_once 'config.php';
 if (!empty($_POST['username']) && !empty($_POST['reponse']) && !empty($_POST['password'])) {
    
    // Et on sécurise en neutralisant la potentielle entrée de html, en créant les variables
-   $username = strip_tags($_POST['username']); 
    $reponse = strip_tags($_POST['reponse']);
-   $password = strip_tags($_POST['password']);
    
    //On convertit la liste déroulante d'array à string, pour intégrer le choix de l'utilisateur dans la BDD
    $question = implode([$_POST['question']]);
       
    // On regarde si l'utilisateur est inscrit dans la table Account
    $check = $conn->prepare('SELECT username, reponse, question FROM Account WHERE username=?');
-   $check->execute(array($username));
+   $check->execute(array(strip_tags($_POST['username'])));
    $data = $check->fetch();
    $row = $check->rowCount(); 
       
@@ -30,13 +28,12 @@ if (!empty($_POST['username']) && !empty($_POST['reponse']) && !empty($_POST['pa
          // On vérifie que la réponse soit la bonne
          if($reponse === $data['reponse']) {
 
-             // On autorise la modification du mot de passe dans la BDD en le sécurisant
-            $passwordhash = password_hash ($_POST['password'], PASSWORD_DEFAULT);
             // Puis on met à jour la BDD en insérant le nouveau mot de passe
-            $update = "UPDATE Account SET password='$passwordhash'WHERE username='$username'";
-            $conn->exec($update);
+            $update = $conn->prepare("UPDATE Account SET password=? WHERE username=?");
+            $update->execute(array(password_hash($_POST['password'], PASSWORD_DEFAULT), $_POST['username']));
+   
             //On envoie un message de réussite à l'utilisateur
-            echo "Votre mot de passe est modifié ! <br> Vous pouvez vous rendre sur la <a href='home.php'> page d'accueil </a> pour vous connecter";
+            echo "Votre mot de passe est modifié ! <br> Vous pouvez vous rendre sur la <a href='index.php'> page d'accueil </a> pour vous connecter";
 
          //Si la réponse n'est pas la bonne : envoi d'un message d'erreur
          } else {

@@ -77,12 +77,12 @@ article {
   padding-right: 10px;
 }
 
-#logo-txt {
+.logo-txt {
   display:flex;
   flex-direction: row;
 }
 
-#logo{
+.logo{
   display:flex;
   justify-content: flex-start;
   margin-left:20px;
@@ -90,13 +90,13 @@ article {
   width:30%;
 }
 
-#article {
+.article {
   display: flex;
   flex-direction: column;
   width:60%;
 }
 
-#bouton {
+.bouton {
   display:flex;
   justify-content: flex-end;
   align-items:flex-end;
@@ -116,7 +116,7 @@ article {
     flex-direction: column;
   }
 
-  #logo{
+  .logo{
     display:flex;
     justify-content: flex-start;
     margin-left:20px;
@@ -124,13 +124,13 @@ article {
     width:40%;
   }
 
-  #article {
+  .article {
     display: flex;
     flex-direction: column;
     width:60%;
   }
 
-  #bouton {
+  .bouton {
     display:flex;
     justify-content: flex-end;
     width:100%;
@@ -139,23 +139,23 @@ article {
 
 /*Responsive mobile*/
 @media screen and (max-width: 768px) {
-  #logo-txt {
+  .logo-txt {
     display:flex;
     flex-direction: column;
     width:100%;
    }
 
-  #txt, h3 {
+  .txt, h3 {
     margin-left:5px;
   }
 
-  #article {
+  .article {
     display: flex;
     flex-direction: column;
     width:100%;
   }
 
-  #logo{
+  .logo{
     display: flex;
     justify-content: center;
     align-items: center;

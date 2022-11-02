@@ -6,5 +6,5 @@ session_start();
 session_destroy();
 
 //On redirige vers la page d'accueil du site
-header ('location: home.php');
+header ('location: index.php');
 ?>

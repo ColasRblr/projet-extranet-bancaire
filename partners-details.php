@@ -6,9 +6,6 @@ session_start () ;
 //On inclue la connexion PDO à la BDD
 include 'config.php';
 
-//On inclue le header
-include 'extensions/header.php';
-
 //On crée les variables dont on a besoin : id_acteur et id_user
 $id_acteur = $_POST['id_acteur'] = $_REQUEST['id_acteur'];
 $id_user=$_SESSION['id_user'];
@@ -18,8 +15,8 @@ $like=1;
 $dislike=-1;
 
 //On va chercher les infos sur l'acteur dans la BDD pour ensuite les afficher
-$sql= $conn->prepare("SELECT acteur, description,logo, id_acteur FROM acteur WHERE id_acteur='$id_acteur'");
-$sql->execute(array($id_acteur));
+$sql= $conn->prepare("SELECT acteur, description,logo, id_acteur FROM acteur WHERE id_acteur=?");
+$sql->execute(array($_REQUEST['id_acteur']));
 $res= $sql->fetch();
 ?>
 
@@ -27,22 +24,30 @@ $res= $sql->fetch();
   <html lang="fr">
     <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Partenaires bancaires</title>
-      <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css"/>
+      <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css">
       <link href="css/details.css" rel="stylesheet">
+      <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css">
+      <link href="css/extensions.css" rel="stylesheet">
+  
     </head>
 
   <body>
 
   <?php 
-   //On sécurise l'accès aux données seulement si utilisateur connecté, sinon on redirige vers home.php
+   //On sécurise l'accès aux données seulement si utilisateur connecté, sinon on redirige vers index.php
    if (isset ($_SESSION['id_user'])) {
+  ?>
+  <?php 
+    //On inclue le header
+    include 'extensions/header.php';
   ?>
     <div class="page">
       
       <div class="partner">
         <div id='logo'> 
-          <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($res['logo']) .'" width=150px/>'; ?>
+          <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($res['logo']) .'" width=150 alt="logo du partenaire">'; ?>
         </div>
         <h2><?php echo $res['acteur'] ;?></h2>
         <div class="description"> 
@@ -52,26 +57,32 @@ $res= $sql->fetch();
 
 <?php
 //On va chercher si l'utilisateur connecté a déjà voté (nécessaire??)
-$check = "SELECT id_user FROM vote WHERE id_acteur='$id_acteur' AND id_user='$id_user'";
-$requete=$conn->query($check);
-$vote_user = $requete -> fetch();
+$check = $conn->prepare("SELECT id_user FROM vote WHERE id_acteur=? AND id_user=?");
+$check->execute(array($_POST['id_acteur'], $_SESSION['id_user']));
+$vote_user = $check -> fetch();
 
 //On va chercher combien de like, dislike et commentaires compte cet acteur
-$number_like = $conn->query("SELECT COUNT(*) FROM vote WHERE vote = 1 AND id_acteur='$id_acteur'")->fetchColumn();
+$numberlike = $conn->prepare("SELECT COUNT(*) FROM vote WHERE vote = ? AND id_acteur=?");
+$numberlike->execute(array($like, $_REQUEST['id_acteur']));
+$number_like = $numberlike->fetchColumn();
 
-$number_dislike = $conn->query("SELECT COUNT(*) FROM vote WHERE vote = -1 AND id_acteur='$id_acteur'")->fetchColumn();
+$numberdislike = $conn->prepare("SELECT COUNT(*) FROM vote WHERE vote = ? AND id_acteur=?");
+$numberdislike->execute(array($dislike, $_REQUEST['id_acteur']));
+$number_dislike = $numberdislike->fetchColumn();
 
-$number_comm = $conn->query("SELECT COUNT(*) FROM post WHERE id_acteur='$id_acteur'")->fetchColumn();
+$numbercomm = $conn->prepare("SELECT COUNT(*) FROM post WHERE id_acteur=?");
+$numbercomm->execute(array($_REQUEST['id_acteur']));
+$number_comm = $numbercomm->fetchColumn();
 
 //On va chercher les commentaires de cet acteur pour ensuite les afficher
-$sql1= "SELECT * FROM Post INNER JOIN Account ON account.id_user = post.id_user WHERE post.id_acteur='$id_acteur' ORDER BY id_post DESC";
-$req=$conn->query($sql1);
-$commentaires=$req->fetchAll(); 
+$sql1= $conn->prepare("SELECT * FROM Post INNER JOIN Account ON account.id_user = post.id_user WHERE post.id_acteur=? ORDER BY id_post DESC");
+$sql1->execute(array($_REQUEST['id_acteur']));
+$commentaires=$sql1->fetchAll(); 
 
 //On va chercher si l'utilisateur connecté a déjà posté un commentaire sur cet acteur
-$check1 = "SELECT id_user FROM post WHERE id_acteur='$id_acteur' AND id_user='$id_user'";
-$requete1=$conn->query($check1);
-$comment_user = $requete1 -> fetch();
+$check1 = $conn->prepare("SELECT id_user FROM post WHERE id_acteur=? AND id_user=?");
+$check1->execute(array($_REQUEST['id_acteur'], $_SESSION['id_user']));
+$comment_user = $check1 -> fetch();
 
 //S'il n'a pas déjà commenté : on lui affiche le formulaire de commentaire?>
   <div class="commentaire"> 
@@ -96,12 +107,12 @@ $comment_user = $requete1 -> fetch();
               <?= $number_like ?>
             </div>
           <form method='post' action='like-section-traitement.php'>
-            <input type='hidden' value='<?= $id_acteur?>' name='id_acteur'/>
+            <input type='hidden' value='<?= $id_acteur?>' name='id_acteur'>
             <input type='hidden' value='<?=$like?>' name='like'>
             <button type='submit'> <img class="pouce" src="img/pouce-haut.png" alt="pouce vers le haut"></button>
           </form>
           <form method='post' action='dislike-section-traitement.php'>
-            <input type='hidden' value='<?=$id_acteur?>' name='id_acteur'/>
+            <input type='hidden' value='<?=$id_acteur?>' name='id_acteur'>
             <input type='hidden' value='<?=$dislike?>' name='dislike'>
             <button type='submit'><img class="pouce" src="img/pouce-bas.png" alt="pouce vers le bas"> </button>
           </form>
@@ -118,13 +129,13 @@ $comment_user = $requete1 -> fetch();
     $date= date_create ($commentaire['date_add']);
     ?>
       <div class="affich-com">
-        <div id="prenom">
+        <div class="prenom">
           <?php echo $commentaire['prenom'];?>
         </div>
-        <div id="date">
+        <div class="date">
           <?php echo date_format($date,"d-m-Y");?>
         </div>
-        <div id="com">
+        <div class="com">
           <?php echo $commentaire ['post'];?> 
         </div>
       </div>
@@ -133,10 +144,9 @@ $comment_user = $requete1 -> fetch();
   </div> 
 
   <?php } else {
-    header('Location:home.php');
+    header('Location:index.php');
   }
   ?>
-
-</body>
   <?php include 'extensions/footer.php'; ?>
+</body>
 </html>

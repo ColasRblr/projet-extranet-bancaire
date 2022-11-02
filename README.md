@@ -48,5 +48,5 @@ Vous pourrez changer ce répertoire par défaut si besoin dans les préférences
     -$dbname : c'est le nom de la base de données à laquelle vous voulez vous connecter. Dans notre cas, la base s'appelle extranet_gbaf, mais vous avez peut-être choisi un autre nom au moment de l'import.
       
     -$username et $password : ils permettent de vous identifier. Renseignez-vous auprès de votre hébergeur pour les connaître (Sur MAMP, la valeur de l'identifiant et du mot de passe est la même : root).
-    
+
 6-Lancez MAMP/WAMP/XAMPP, rendez-vous dans MY WEBSITE puis home.php (http://localhost:8888/projet-extranet-bancaire/home.php) et dans TOOLS/PHPMYADMIN pour travailler sur la BDD : et c'est parti !

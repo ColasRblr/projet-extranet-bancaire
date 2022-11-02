@@ -19,6 +19,7 @@ $data = $check->fetch();
   <html lang="fr">
     <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Paramètres du compte</title>
       <link href="css/formulaire.css" rel="stylesheet">
     </head>
@@ -26,7 +27,7 @@ $data = $check->fetch();
   <body>
 
   <?php 
-   //On sécurise l'accès aux données seulement si utilisateur connecté, sinon on redirige vers home.php
+   //On sécurise l'accès aux données seulement si utilisateur connecté, sinon on redirige vers index.php
    if (isset ($_SESSION['id_user'])) {
   ?>
 
@@ -36,16 +37,16 @@ $data = $check->fetch();
       </div>
       <form class="form" method="post" action="account-settings-traitement.php">
         <label for="username_new">Identifiant</label>
-        <input type="text" name="username_new" value="<?php echo $data['username']?>" id="username_new"/>
+        <input type="text" name="username_new" value="<?php echo $data['username']?>" id="username_new">
        
         <label for="nom_new">Nom</label>
-        <input type="text"  name="nom_new" value="<?php echo $data['nom']?>" id="nom_new"/>
+        <input type="text"  name="nom_new" value="<?php echo $data['nom']?>" id="nom_new">
 
         <label for="prenom_new">Prénom</label>
-        <input type="text" name="prenom_new" value="<?php echo $data['prenom']?>" id="prenom_new"/>
+        <input type="text" name="prenom_new" value="<?php echo $data['prenom']?>" id="prenom_new">
 
         <label for="password_new">Mot de passe </label>
-        <input type="password" name="password_new" id="password_new"/>
+        <input type="password" name="password_new" id="password_new">
 
         <button id="login-btn" type="submit" name="username-modif">Enregistrer mes modifications</button>
       </form>
@@ -53,7 +54,7 @@ $data = $check->fetch();
     </div>
 
     <?php } else {
-    header('Location:home.php');
+    header('Location:index.php');
   }
   ?>
 

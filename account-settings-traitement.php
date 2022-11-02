@@ -10,41 +10,31 @@ $id_user=$_SESSION ['id_user'];
 
 //1:Pour modifier le champ utilisateur : on vérifie que le champ est rempli
 if (!empty($_POST['username_new'])) {
-  //Et on sécurise en neutralisant la potentielle entrée de html
-  $username_new = strip_tags($_POST['username_new']); 
   //On met à jour les données de l'utilisateur dans la BDD
-  $update_username = "UPDATE account SET username='$username_new' WHERE id_user=$id_user";
-  $conn->exec($update_username);
+  $update_username = $conn->prepare("UPDATE account SET username=? WHERE id_user=?");
+  $update_username->execute(array(strip_tags($_POST['username_new']),$_SESSION['id_user']));
 };
-                
+
 //2:Pour modifier le champ nom, on vérifie que le champ est rempli
-if (!empty($_POST['nom_new'])) {
-  //Et on sécurise en neutralisant la potentielle entrée de html
-  $nom_new = strip_tags($_POST['nom_new']);                    
+if (!empty($_POST['nom_new'])) {           
   //On met à jour les données de l'utilisateur dans la BDD
-  $update_nom = "UPDATE Account SET nom='$nom_new' WHERE id_user=$id_user";
-  $conn->exec($update_nom);
+  $update_nom = $conn->prepare("UPDATE account SET nom=? WHERE id_user=?");
+  $update_nom->execute(array(strip_tags($_POST['nom_new']),$_SESSION['id_user']));
 };
 
                 
 //3:Pour modifier le champ prenom, on vérifie que le champ est rempli
 if (!empty($_POST['prenom_new'])) {
-  //Et on sécurise en neutralisant la potentielle entrée de html
-  $prenom_new = strip_tags($_POST['prenom_new']);
   //On met à jour les données de l'utilisateur dans la BDD
-  $update_prenom = "UPDATE Account SET prenom='$prenom_new' WHERE id_user=$id_user";
-  $conn -> exec($update_prenom);
+  $update_prenom = $conn->prepare("UPDATE account SET prenom=? WHERE id_user=?");
+  $update_prenom->execute(array(strip_tags($_POST['prenom_new']),$_SESSION['id_user']));
 };
 
 //4:Pour modifier le champ password, on vérifie que le champ est rempli
-if (!empty($_POST['password_new'])) {
-  //Et on sécurise en neutralisant la potentielle entrée de html
-  $password_new = strip_tags($_POST['password_new']);               
-  //On autorise la modification du password dans la BDD en sécurisant avec un hash
-  $password_new_hash = password_hash ($_POST['password_new'], PASSWORD_DEFAULT);                     
+if (!empty($_POST['password_new'])) {                    
   //On met à jour les données de l'utilisateur dans la BDD
-  $update_password = "UPDATE Account SET password='$password_new_hash' WHERE id_user=$id_user";
-  $conn->exec($update_password);
+  $update_password = $conn->prepare("UPDATE account SET password=? WHERE id_user=?");
+  $update_password->execute(array(password_hash($_POST['password_new'], PASSWORD_DEFAULT),$_SESSION['id_user']));
 };
 ?>
 
