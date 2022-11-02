@@ -1,5 +1,4 @@
-
-  <?php  
+<?php  
 //On maintient l'ouverture de session
 session_start ();
 
@@ -7,18 +6,22 @@ session_start ();
 include 'config.php';
 
 //on va chercher les infos des acteurs dans la BDD
-$sql="SELECT acteur, description,logo, id_acteur FROM acteur ORDER BY id_acteur";
-$requete=$conn->query($sql);
-$acteurs = $requete -> fetchAll();
+$sql= $conn->prepare("SELECT acteur, description,logo, id_acteur FROM acteur ORDER BY id_acteur");
+$sql->execute(array());
+$acteurs = $sql -> fetchAll();
 ?>
 
 <!doctype html>
 <html lang="fr">
     <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Connexion utilisateur</title>
-      <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css"/>
+      <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css">
       <link href="css/style.css" rel="stylesheet">
+      <link href="https://www.dafontfree.net/embed/c2NyYW1ibGVtaXhlZC1yZWd1bGFyJmRhdGEvMjIvcy8xMDg1MjcvU2NyYW1ibGVNaXhlZC50dGY" rel="stylesheet" type="text/css">
+      <link href="css/extensions.css" rel="stylesheet">
+  
     </head>
 
     <body>
@@ -28,13 +31,13 @@ $acteurs = $requete -> fetchAll();
     </header>
 
   <?php 
-    //On sécurise l'accès aux données seulement si utilisateur connecté, sinon on redirige vers home.php
+    //On sécurise l'accès aux données seulement si utilisateur connecté, sinon on redirige vers index.php
     if (isset ($_SESSION['id_user'])) {
   ?>
       <div class="page">
         <div id="presentation-gbaf">
           <h1>Qu'est-ce que le GBAF ? </h1> 
-            <p>Le Groupement Banque Assurance Français​ (GBAF) est une fédération représentant les 6 grands groupes français :<br/></p>
+            <p>Le Groupement Banque Assurance Français​ (GBAF) est une fédération représentant les 6 grands groupes français :<br></p>
             <ul>
               <li> BNP Paribas ; </li>
               <li> BPCE;</li>
@@ -73,21 +76,21 @@ $acteurs = $requete -> fetchAll();
         ?>
 
           <article> 
-            <div id="logo-txt">
-              <div id="logo">
-                <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($acteur['logo']) .'" width=100px/>';?>
+            <div class="logo-txt">
+              <div class="logo">
+                <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($acteur['logo']) .'" width=100 alt="logo du partenaire">';?>
               </div>
-              <div id="article"> 
+              <div class="article"> 
                 <h3><?php echo $acteur['acteur']?></h3>
-                  <div id="txt">
+                  <div class="txt">
                     <?php echo substr($acteur['description'],0 , 80), '...';?>
                   </div>
               </div>  
             </div>
-            <div id="bouton">
+            <div class="bouton">
               <form action="partners-details.php" method="POST">
                 <input type="hidden" value='<?php echo $acteur['id_acteur']?>' name="id_acteur">
-                <button id="suite" type="submit">Afficher la suite</button>
+                <button class="suite" type="submit">Afficher la suite</button>
               </form>
             </div>
           </article>
@@ -99,7 +102,7 @@ $acteurs = $requete -> fetchAll();
       <?php include 'extensions/footer.php'; ?>
     </footer>
  <?php } else {
-    header('Location:home.php');
+    header('Location:index.php');
   }
   ?>
   </body>

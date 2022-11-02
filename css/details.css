@@ -16,7 +16,7 @@ p {
 }
  
 /*Mise en forme de la présentation de l'acteur*/
-.partner{
+.partner {
   display:flex;
   flex-direction: column;
   border:solid 2px;
@@ -25,7 +25,7 @@ p {
   padding: 20px 20px 20px 20px;
 }
 
-`/*Mise en forme du logo de l'acteur*/
+/*Mise en forme du logo de l'acteur*/
 #logo {
   display: flex;
   flex-direction: row;
@@ -36,7 +36,7 @@ p {
 /*Mise en forme de la partie commentaire-vote*/
 .commentaire {
   display:flex;
-  flex-direction: column;
+  flex-direction:column;
   border:solid 2px;
   border-color: black;
   margin:0 0px 20px 00px;;
@@ -45,7 +45,7 @@ p {
 /*Ensemble fonctionnalité commentaire et fonctionnalité vote*/
 #com-vote {
   display:flex;
-  flex-direction: row;
+  flex-direction:row;
 }
 
 #titre-com {
@@ -102,11 +102,11 @@ p {
   padding:4px 4px 4px 4px;
 }
 
-#prenom {
+.prenom {
   font-weight: bold;
 }
 
-#date {
+.date {
   font-style:italic;
 }
 
@@ -159,7 +159,7 @@ p {
     width:80%;
   }
 
-  #com {
+  .com {
     margin:3px 3px 3px 3px;
   }
 

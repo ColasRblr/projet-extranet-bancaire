@@ -7,20 +7,16 @@ require_once 'config.php';
 //On vérifie que les champs Username et Password ne soient pas vides
 if (!empty($_POST['username']) && !empty($_POST['password'])) {
   
-   // Et on sécurise en neutralisant la potentielle entrée de html
-   $username = strip_tags($_POST['username']); 
-   $password = strip_tags($_POST['password']);
-  
    // On regarde si l'utilisateur est inscrit dans la table Account
    $check = $conn->prepare('SELECT * FROM Account WHERE username =?');
-   $check->execute(array($username));
+   $check->execute(array(strip_tags($_POST['username'])));
    $data = $check->fetch();
    $row = $check->rowCount();
         
    // Si > à 0 alors l'utilisateur existe
    if($row > 0) {
       // On vérifie ensuite que le mot de passe est le bon
-      if(password_verify($password, $data['password'])) {
+      if(password_verify(strip_tags($_POST['password']), $data['password'])) {
          //Si c'est bon, on ouvre la session et on crée les variables de session
          session_start();
          $_SESSION['id_user'] = $data['id_user'];

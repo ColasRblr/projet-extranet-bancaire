@@ -1,0 +1,3 @@
+RewriteEngine On
+ErrorDocument 404 /projet-extranet-bancaire/index.php
+ErrorDocument 500 /projet-extranet-bancaire/index.php
