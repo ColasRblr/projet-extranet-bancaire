@@ -6,12 +6,9 @@ session_start()  ;
 //On inclue la connexion PDO à la BDD
 include 'config.php';
 
-//on crée la variable $id_user
-$id_user = $_SESSION['id_user'];
-
 //on va chercher les informations du user connecté dans la BDD
 $check = $conn->prepare('SELECT * FROM Account WHERE id_user=?');
-$check->execute(array($id_user));
+$check->execute(array($_SESSION['id_user']));
 $data = $check->fetch();
 ?>
   

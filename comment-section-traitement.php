@@ -5,9 +5,8 @@ session_start () ;
 //On inclue la connexion à la BDD
 require ('config.php');
 
-//On crée les variables nécessaires au traitement des données : id_user et id_acteur
+//On crée la variable id_acteur pour la redirection
 $id_acteur= $_POST['id_acteur'];
-$id_user=$_SESSION['id_user'];
 
 //On insère le commentaire de l'utilisateur dans la BDD
  if (!empty($_POST['commentaire'])) {
